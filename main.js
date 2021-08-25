@@ -8,6 +8,11 @@ const search = document.getElementById("search");
 search.placeholder = "Type Name Or ID";
 const btnSearch = document.getElementById("btnSearch");
 
+let paragrap = document.createElement("p")
+paragrap.setAttribute("id", "psearch");
+document.body.appendChild(paragrap)
+p1 = document.getElementById("psearch");
+
 let allSubjects = [];
 
 function upper(input) {
@@ -89,5 +94,9 @@ btnSearch.addEventListener("click", () => {
       }
     }
     console.log(obj);
+    if(obj){
+      p1.innerHTML = `<p>found the name: ${obj.name}, Last Name: ${obj.lastName}, Id:${obj.id}</p>`
+    }
+
   }
 });
